@@ -15,12 +15,11 @@ public class LibraryService {
 
     private final Map<Integer, List<Book>> studentReservations = new HashMap<>();
     private final Map<Integer, String> bookStatus = new HashMap<>();
-
-    // Instância Singleton
+    
+//    um campo estático instance para armazenar a única instância do LibraryService.
     private static LibraryService instance;
 
     private LibraryService() {
-        // Construtor privado para evitar múltiplas instâncias
     }
 
     public static LibraryService getInstance() {
@@ -59,11 +58,9 @@ public class LibraryService {
                     return "Livro já está reservado.";
                 }
 
-                // Adiciona o livro à lista de reservas do estudante
                 studentReservations.putIfAbsent(studentId, new ArrayList<Book>());
                 studentReservations.get(studentId).add(book);
 
-                // Atualiza o status do livro para "indisponível"
                 bookStatus.put(bookId, "indisponível");
 
                 return "Livro reservado com sucesso!";

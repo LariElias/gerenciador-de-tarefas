@@ -2,7 +2,6 @@ package mini.projeto.gerenciador_tarefas.controller;
 
 import mini.projeto.gerenciador_tarefas.model.Book;
 import mini.projeto.gerenciador_tarefas.service.LibraryService;
-import mini.projeto.gerenciador_tarefas.model.Book;
 import java.util.List;
 
 public class LibraryController {

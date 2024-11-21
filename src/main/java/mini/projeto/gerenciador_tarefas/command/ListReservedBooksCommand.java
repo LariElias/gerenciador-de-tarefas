@@ -20,7 +20,6 @@ public class ListReservedBooksCommand implements Command {
         System.out.print("Digite o ID do estudante: ");
         int studentId = scanner.nextInt();
 
-        // Usa um for loop tradicional para exibir os livros reservados
         List<Book> reservedBooks = libraryService.getReservedBooks(studentId);
         for (Book book : reservedBooks) {
             System.out.println(book);

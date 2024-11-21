@@ -4,19 +4,18 @@ import com.google.gson.annotations.SerializedName;
 public class Book {
     private int id;
 
-    @SerializedName("titulo")  // Ajuste para o nome correto no JSON
+    @SerializedName("titulo") 
     private String title;
 
-    @SerializedName("autor")   // Ajuste para o nome correto no JSON
+    @SerializedName("autor")   
     private String author;
 
-    @SerializedName("ano")     // Ajuste para o nome correto no JSON
+    @SerializedName("ano")     
     private int year;
 
-    @SerializedName("status")  // Ajuste para o nome correto no JSON
+    @SerializedName("status")  
     private String status;
 
-    // Construtor, getters e setters
 
     @Override
     public String toString() {

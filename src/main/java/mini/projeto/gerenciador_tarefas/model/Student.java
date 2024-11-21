@@ -4,20 +4,19 @@ import com.google.gson.annotations.SerializedName;
 public class Student {
     private int id;
 
-    @SerializedName("nome")  // Ajuste para o nome correto no JSON
+    @SerializedName("nome")
     private String name;
 
-    @SerializedName("curso")  // Ajuste para o nome correto no JSON
+    @SerializedName("curso") 
     private String course;
 
-    @SerializedName("modalidade")  // Ajuste para o nome correto no JSON
+    @SerializedName("modalidade")  
     private String modality;
 
-    @SerializedName("status")  // Ajuste para o nome correto no JSON
+    @SerializedName("status")  
     private String status;
 
-    // Construtor, getters e setters
-
+  
     @Override
     public String toString() {
         return "Student{id=" + id + ", name='" + name + "', course='" + course + "', modality='" + modality + "', status='" + status + "'}";

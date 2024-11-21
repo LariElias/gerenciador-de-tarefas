@@ -21,7 +21,6 @@ public class CancelReservationCommand implements Command {
         System.out.print("Digite o ID do livro a ter a reserva cancelada: ");
         int bookId = scanner.nextInt();
 
-        // Usa o serviço para cancelar a reserva
         String result = libraryService.cancelReservation(studentId, bookId);
         System.out.println(result);
 

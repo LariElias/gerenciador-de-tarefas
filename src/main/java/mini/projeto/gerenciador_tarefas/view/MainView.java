@@ -15,9 +15,6 @@ public class MainView {
         initializeCommands();
     }
 
-    /**
-     * Inicializa os comandos e os mapeia às opções do menu.
-     */
     private void initializeCommands() {
         commands.put(1, new ListAllStudentsCommand(ControllerFactory.createStudentController()));
         commands.put(2, new ListActiveStudentsCommand(ControllerFactory.createStudentController()));
@@ -30,9 +27,7 @@ public class MainView {
         commands.put(9, new CancelReservationCommand());
     }
 
-    /**
-     * Exibe o menu principal e gerencia a interação com o usuário.
-     */
+   
     public void showMenu() {
         Scanner scanner = new Scanner(System.in);
         int option;
@@ -51,7 +46,7 @@ public class MainView {
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             option = scanner.nextInt();
-            scanner.nextLine();  // Consome o caractere de nova linha
+            scanner.nextLine();  
 
             Command command = commands.get(option);
 
@@ -63,9 +58,18 @@ public class MainView {
                 System.out.println("Opção inválida. Tente novamente.");
             }
 
-            System.out.println(); // Linha em branco para separar as interações
+            System.out.println();
         } while (option != 0);
 
         scanner.close();
     }
 }
+
+
+
+
+
+
+
+
+	

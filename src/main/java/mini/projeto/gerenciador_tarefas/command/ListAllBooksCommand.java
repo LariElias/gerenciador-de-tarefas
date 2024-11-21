@@ -12,7 +12,6 @@ public class ListAllBooksCommand implements Command {
 
     @Override
     public void execute() {
-        // Usa um for loop tradicional para exibir os livros
         for (Book book : libraryService.getAllBooks()) {
             System.out.println(book);
         }

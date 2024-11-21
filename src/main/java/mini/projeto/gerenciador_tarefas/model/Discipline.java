@@ -4,13 +4,12 @@ import com.google.gson.annotations.SerializedName;
 public class Discipline {
     private int id;
 
-    @SerializedName("curso")  // Mapeia o campo JSON "curso" para o atributo "course"
+    @SerializedName("curso")  
     private String course;
 
-    @SerializedName("nome")   // Mapeia o campo JSON "nome" para o atributo "name"
+    @SerializedName("nome")   
     private String name;
 
-    // Construtor, getters e setters
 
     @Override
     public String toString() {

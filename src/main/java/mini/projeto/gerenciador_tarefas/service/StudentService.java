@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class StudentService {
     private static final String STUDENT_API_URL = "https://rmi6vdpsq8.execute-api.us-east-2.amazonaws.com/msAluno";
@@ -44,16 +45,16 @@ public class StudentService {
      * @param id ID do estudante
      * @return Objeto Student se encontrado, null caso contrário
      */
-    public Student getStudentById(int id) {
+    public Optional<Student> getStudentById(int id) {
         List<Student> students = getAllStudents();
         for (Student student : students) {
             if (student.getId() == id) {
-                return student;
+                return Optional.of(student);
             }
         }
-        System.out.println("Estudante com ID " + id + " não encontrado.");
-        return null;
+        return Optional.empty();
     }
+
 
     /**
      * Método para buscar estudantes ativos na modalidade presencial e curso de História.

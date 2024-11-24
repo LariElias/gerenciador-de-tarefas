@@ -4,6 +4,7 @@ import mini.projeto.gerenciador_tarefas.model.Student;
 import mini.projeto.gerenciador_tarefas.service.StudentService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class StudentController {
 	private final StudentService studentService;
@@ -56,7 +57,7 @@ public class StudentController {
      * @param id ID do estudante
      */
     public void showStudentDetails(int id) {
-        Student student = studentService.getStudentById(id);
+        Optional<Student> student = studentService.getStudentById(id);
         if (student != null) {
             System.out.println(student);
         } else {

@@ -4,6 +4,7 @@ import mini.projeto.gerenciador_tarefas.controller.StudentController;
 import mini.projeto.gerenciador_tarefas.controller.DisciplineController;
 import mini.projeto.gerenciador_tarefas.controller.LibraryController;
 import mini.projeto.gerenciador_tarefas.controller.EnrollmentController;
+import mini.projeto.gerenciador_tarefas.controller.MainController;
 import mini.projeto.gerenciador_tarefas.service.DisciplineService;
 import mini.projeto.gerenciador_tarefas.service.EnrollmentService;
 import mini.projeto.gerenciador_tarefas.service.StudentService;
@@ -12,6 +13,7 @@ import mini.projeto.gerenciador_tarefas.view.StudentView;
 import mini.projeto.gerenciador_tarefas.view.DisciplineView;
 import mini.projeto.gerenciador_tarefas.view.LibraryView;
 import mini.projeto.gerenciador_tarefas.view.EnrollmentView;
+
 
 public class App {
     public static void main(String[] args) {
@@ -32,8 +34,11 @@ public class App {
         LibraryView libraryView = new LibraryView(libraryController);
         EnrollmentView enrollmentView = new EnrollmentView(enrollmentController);
 
+        // Instanciar o controlador do menu principal
+        MainController mainController = new MainController(studentView, disciplineView, libraryView, enrollmentView);
+
         // Instanciar a MainView
-        MainView mainView = new MainView(studentView, disciplineView, libraryView, enrollmentView);
+        MainView mainView = new MainView(mainController);
 
         // Exibir o menu principal
         mainView.showMenu();

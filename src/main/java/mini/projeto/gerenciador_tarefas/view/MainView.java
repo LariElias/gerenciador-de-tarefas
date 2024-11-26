@@ -1,19 +1,15 @@
 package mini.projeto.gerenciador_tarefas.view;
 
 
+import mini.projeto.gerenciador_tarefas.controller.MainController;
+
 import java.util.Scanner;
 
 public class MainView {
-    private final StudentView studentView;
-    private final DisciplineView disciplineView;
-    private final LibraryView libraryView;
-    private final EnrollmentView enrollmentView;
+    private final MainController mainController;
 
-    public MainView(StudentView studentView, DisciplineView disciplineView, LibraryView libraryView, EnrollmentView enrollmentView) {
-        this.studentView = studentView;
-        this.disciplineView = disciplineView;
-        this.libraryView = libraryView;
-        this.enrollmentView = enrollmentView;
+    public MainView(MainController mainController) {
+        this.mainController = mainController;
     }
 
     public void showMenu() {
@@ -30,28 +26,9 @@ public class MainView {
             System.out.print("Escolha uma opção: ");
             option = scanner.nextInt();
 
-            switch (option) {
-                case 1:
-                    studentView.showMenu();
-                    break;
-                case 2:
-                    disciplineView.showMenu();
-                    break;
-                case 3:
-                    libraryView.showMenu();
-                    break;
-                case 4:
-                    enrollmentView.showMenu();
-                    break;
-                case 0:
-                    System.out.println("Saindo...");
-                    break;
-                default:
-                    System.out.println("Opção inválida. Tente novamente.");
-            }
+            mainController.handleOption(option); // Delegar ao controlador do menu
         } while (option != 0);
 
         scanner.close();
     }
 }
-	
